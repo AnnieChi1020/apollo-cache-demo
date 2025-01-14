@@ -30,6 +30,7 @@ const TodoList = () => {
     <ul className="space-y-4">
       {data.todos.map((todo) => (
         <ToDoItem
+          type="toDoList"
           key={todo.id}
           todo={todo}
           onToggle={handleToggle}

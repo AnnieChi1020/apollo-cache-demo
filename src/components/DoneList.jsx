@@ -15,7 +15,7 @@ const DoneList = () => {
   return (
     <ul className="space-y-4">
       {data.todos.map((todo) => (
-        <ToDoItem key={todo.id} todo={todo} />
+        <ToDoItem type="doneList" key={todo.id} todo={todo} />
       ))}
     </ul>
   );
