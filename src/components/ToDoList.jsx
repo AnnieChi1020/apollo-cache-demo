@@ -3,10 +3,7 @@ import { GET_TODOS, UPDATE_TODO, DELETE_TODO } from "../graphql/queries";
 import ToDoItem from "./ToDoItem";
 
 const TodoList = () => {
-  const { loading, error, data } = useQuery(GET_TODOS, {
-    variables: { completed: false },
-    fetchPolicy: "cache-and-network",
-  });
+  const { loading, error, data } = useQuery(GET_TODOS);
 
   const [updateTodo] = useMutation(UPDATE_TODO);
   const [deleteTodo] = useMutation(DELETE_TODO);

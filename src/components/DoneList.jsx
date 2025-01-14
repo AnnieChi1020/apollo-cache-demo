@@ -6,7 +6,6 @@ import ToDoItem from "./ToDoItem";
 const DoneList = () => {
   const { loading, error, data } = useQuery(GET_TODOS, {
     variables: { completed: true },
-    fetchPolicy: "cache-and-network",
   });
 
   if (loading) return <div>Loading...</div>;

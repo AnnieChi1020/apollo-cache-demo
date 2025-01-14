@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
 export const GET_TODOS = gql`
-  query GetTodos($completed: Boolean!) {
+  query GetTodos($completed: Boolean) {
     todos(completed: $completed) {
       id
       text
