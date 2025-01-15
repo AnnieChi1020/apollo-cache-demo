@@ -1,6 +1,6 @@
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
-import TodoList from "./components/TodoList";
-import AddTodo from "./components/AddTodo";
+import TodoList from "./components/ToDoList";
+import AddTodo from "./components/AddToDo";
 import DoneList from "./components/DoneList";
 
 const client = new ApolloClient({
