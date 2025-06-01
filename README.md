@@ -2,6 +2,10 @@
 
 This project demonstrates how to use Apollo Client's cache management features in a React application. It includes both a frontend React application and a GraphQL server.
 
+## Demo
+
+![Apollo Cache Demo](demo.gif)
+
 ## Project Structure
 
 - `/src` - Frontend React application
