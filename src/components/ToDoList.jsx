@@ -28,12 +28,32 @@ const TodoList = () => {
 
   // 1. Use refetchQueries to update the cache
   // const [deleteTodo] = useMutation(DELETE_TODO, {
-  //   refetchQueries: [{ query: GET_TODOS }],
+  //   refetchQueries: [
+  //     { query: GET_TODOS },
+  //     { query: GET_TODOS, variables: { completed: true } },
+  //   ],
   // });
 
   // 2. Use writeQuery to update the cache
   // const [deleteTodo] = useMutation(DELETE_TODO, {
-  //   writeQuery: { query: GET_TODOS, data: { todos: data.todos.filter((todo) => todo.id !== deleteTodo.id) } },
+  //   update: (cache, { data: { deleteTodo } }) => {
+  //     // Update main todo list
+  //     cache.writeQuery({
+  //       query: GET_TODOS,
+  //       data: { todos: data.todos.filter((todo) => todo.id !== deleteTodo.id) },
+  //     });
+
+  //     // Update DoneList (completed todos)
+  //     cache.writeQuery({
+  //       query: GET_TODOS,
+  //       variables: { completed: true },
+  //       data: {
+  //         todos: data.todos.filter(
+  //           (todo) => todo.completed && todo.id !== deleteTodo.id
+  //         ),
+  //       },
+  //     });
+  //   },
   // });
 
   // 3. Use updateQuery to update the cache
@@ -44,6 +64,16 @@ const TodoList = () => {
           todos: data.todos.filter((todo) => todo.id !== deleteTodo.id),
         };
       });
+
+      // Update the DoneList cache as well when a todo is deleted
+      cache.updateQuery(
+        { query: GET_TODOS, variables: { completed: true } },
+        (data) => {
+          return {
+            todos: data.todos.filter((todo) => todo.id !== deleteTodo.id),
+          };
+        }
+      );
     },
   });
 
