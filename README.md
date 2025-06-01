@@ -62,21 +62,21 @@ This project includes practical demonstrations of different methods to update th
 
 ### 1. Adding Todo Items
 
-Commit: `2e8f8b39f48e3a6a9cd26eb75e739e67377dc9bc`
+[Commit: 2e8f8b39f48e3a6a9cd26eb75e739e67377dc9bc](https://github.com/AnnieChi1020/apollo-cache-demo/commit/2e8f8b39f48e3a6a9cd26eb75e739e67377dc9bc)
 
 - Shows how to update cache after adding a todo item
 - Demonstrates different approaches to update cache after creating a new todo item
 
 ### 2. Deleting Todo Items
 
-Commit: `add0e496a720f3dd957079fd29882bad527636f2`
+[Commit: add0e496a720f3dd957079fd29882bad527636f2](https://github.com/AnnieChi1020/apollo-cache-demo/commit/add0e496a720f3dd957079fd29882bad527636f2)
 
 - Shows how to update cache after deleting a todo item
 - Demonstrates different approaches to update cache after deleting a new todo item
 
 ### 3. Updating Todo Status of Different Query
 
-Commit: `749325acfee04c1af1588ed73ccb9cd4cd16dc24`
+[Commit: 749325acfee04c1af1588ed73ccb9cd4cd16dc24](https://github.com/AnnieChi1020/apollo-cache-demo/commit/749325acfee04c1af1588ed73ccb9cd4cd16dc24)
 
 - Demonstrates updating related queries (the one used in DoneList) after changing todo completion status
 - Shows how to handle cache updates across multiple queries
