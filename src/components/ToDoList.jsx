@@ -5,8 +5,19 @@ import ToDoItem from "./ToDoItem";
 const TodoList = () => {
   const { loading, error, data } = useQuery(GET_TODOS);
 
-  // No need to update the cache manually
-  const [updateTodo] = useMutation(UPDATE_TODO);
+  const [updateTodo] = useMutation(UPDATE_TODO, {
+    // Update the DoneList cache when a todo is completed / uncompleted
+    update: (cache, { data: { updateTodo } }) => {
+      cache.updateQuery(
+        { query: GET_TODOS, variables: { completed: true } },
+        (existingData) => ({
+          todos: updateTodo.completed
+            ? [...existingData.todos, updateTodo]
+            : existingData.todos.filter((todo) => todo.id !== updateTodo.id),
+        })
+      );
+    },
+  });
 
   /**
    * Different ways to update the cache after deleting a todo
